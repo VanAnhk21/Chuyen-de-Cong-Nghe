@@ -9,7 +9,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField("date published")
     def __str__(self):
         return self.question_text
-    @admin.display(
+    @admin.display(     
         boolean=True,
         ordering="pub_date",
         description="Published recently?",
