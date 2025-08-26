@@ -68,6 +68,19 @@ TEMPLATES = [
             ],
         },
     },
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            "/home/html/example.com",
+            "/home/html/default",
+        ],
+    },
+    {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": [
+            "/home/html/jinja2",
+        ],
+    },
 ]
 
 WSGI_APPLICATION = 'view_template.wsgi.application'
@@ -124,3 +137,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+OPTIONS = {
+    "libraries": {
+        "myapp_tags": "path.to.myapp.tags",
+        "admin.urls": "django.contrib.admin.templatetags.admin_urls",
+    },
+    "builtins": ["myapp.builtins"],
+}
