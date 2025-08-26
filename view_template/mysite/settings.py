@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.main',
     'apps.help',
     'credit',
+    'apps.books',
 ]
 
 MIDDLEWARE = [

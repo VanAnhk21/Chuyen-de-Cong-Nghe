@@ -20,6 +20,7 @@ from polls import views
 from mysite import converters
 from apps.main import views as main_views
 from credit import views as credit_views
+from apps.main.views import AsyncView
 
 
 register_converter(converters.FourDigitYearConverter, "yyyy")
@@ -85,6 +86,9 @@ urlpatterns = [
     path("publisher-polls/", include("polls.urls", namespace="publisher-polls")),
     
     path("polls/", include("polls.urls")),
+
+    path("async/", AsyncView.as_view(), name="async-demo"),
+
 
 ]
 
